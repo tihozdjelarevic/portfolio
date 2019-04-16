@@ -28,7 +28,7 @@ print("Validation MAE when not specifying max_leaf_nodes: {:,.0f}".format(val_ma
 
 # We define the funcion get_mae() to to iterate over our prediction model in order to determine the best value for max_leaf_nodes
 def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
-    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)
+    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=1)
     model.fit(train_X, train_y)
     preds_val = model.predict(val_X)
     mae = mean_absolute_error(val_y, preds_val)
