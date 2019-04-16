@@ -39,7 +39,7 @@ for max_leaf_nodes in [5, 50, 500, 5000]:
     print("Max leaf nodes: %d  \t\t Mean Absolute Error:  %d" %(max_leaf_nodes, my_mae))
 
 # Using best value for max_leaf_nodes
-iowa_model = DecisionTreeRegressor(max_leaf_nodes=100, random_state=1)
+iowa_model = DecisionTreeRegressor(max_leaf_nodes=50, random_state=1)
 iowa_model.fit(train_X, train_y)
 val_predictions = iowa_model.predict(val_X)
 val_mae = mean_absolute_error(val_predictions, val_y)
